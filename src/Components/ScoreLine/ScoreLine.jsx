@@ -1,9 +1,9 @@
 import React from "react";
 import "./ScoreLine.css";
 
-export default function ScoreLine({score}){
+export default function ScoreLine(props){
 
     return (
-        <p>The score is {score}</p>
+        <p>The score is {props.score}</p>
     )
 }
