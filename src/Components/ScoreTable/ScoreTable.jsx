@@ -26,14 +26,14 @@ export default function ScoreTable() {
     console.log("simulate changes engaged")
     // Handicap
     sorted.map((user, index) => {
-        user.score += (randomNumber((index), 1) * 10)
+        user.score += (randomNumber((index), 1))
         return user;
     })
     sortList();
+    setScoreListState(sorted);
   }
 
-
-
+  // Sort the list
   function sortList() {
     sorted = [...scoreListState].sort((a, b) => {
         return b.score - a.score;
