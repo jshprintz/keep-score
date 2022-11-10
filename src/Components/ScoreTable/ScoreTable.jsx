@@ -7,29 +7,49 @@ export default function ScoreTable() {
   let sorted = [];
   const [scoreListState, setScoreListState] = useState([newUser()]);
 
-  getInitialScores();
+  init();
 
-  function getInitialScores() {
+  // Initialize program
+  function init() {
+    // Init get scores/users
     if (scoreListState.length < 20) {
       setScoreListState((oldState) => [...oldState, newUser()]);
-      console.log(scoreListState.length);
     } else {
-        sorted = [...scoreListState].sort((a, b) => {
-        return b.score - a.score;
-      });
+        //Sort the list of users by score
+        sortList();
+        simulateChanges();
     }
   }
 
+  function simulateChanges() {
+    // Handicap
+    sorted.map((user) => {
+        user.score += randomNumber((sorted[0].score/10), (user.score/10))
+        return user;
+    })
+    sortList();
+  }
+
+
+
+  function sortList() {
+    sorted = [...scoreListState].sort((a, b) => {
+        return b.score - a.score;
+        });
+  }
+
+  // Init new user
   function newUser() {
     const newUser = {
       name: faker.name.fullName(),
-      score: randomScore(),
+      score: randomNumber(1000, 100),
     };
     return newUser;
   }
 
-  function randomScore() {
-    return Math.floor(Math.random() * (20000 - 10000 + 1) + 10000);
+  // Init random score
+  function randomNumber(max, min) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
   return (
