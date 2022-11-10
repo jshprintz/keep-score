@@ -1,0 +1,4 @@
+#score-line-container {
+    display: flex;
+    justify-content: center;
+}

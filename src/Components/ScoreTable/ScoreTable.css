@@ -2,9 +2,11 @@
     height: 80vh;
     width: 80vw;
     border: 2px solid rgb(151, 151, 194);
+    overflow: scroll;
 }
 
 #score-table-container {
     display: flex;
     justify-content: center;
+    
 }
