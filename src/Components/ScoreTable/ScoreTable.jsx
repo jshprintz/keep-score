@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ScoreLine from "../ScoreLine/ScoreLine";
 import "./ScoreTable.css";
 
 export default function ScoreTable() {
-  const scoreList = [randomScore()];
+  //const scoreList = [randomScore()];
+  const [scoreListState, setScoreListState] = useState([]);
 
   useEffect(() => {
     console.log("useeffect launched")
@@ -12,9 +13,10 @@ export default function ScoreTable() {
 
   function getInitialScores() {
     console.log("initial score launched")
-    while (scoreList.length < 20) {
-      scoreList.push(randomScore());
-      console.log(scoreList)
+
+    while (scoreListState.length < 20) {
+         setScoreListState(oldState => [...oldState, randomScore()]) 
+         console.log(scoreListState)
     }
   }
 
@@ -27,7 +29,7 @@ export default function ScoreTable() {
   return (
     <div id="score-table-container">
       <div id="score-table">
-        {scoreList.map((score) => {
+        {scoreListState.map((score) => {
             return (
                 <ScoreLine score={score} key={score}/>
             )
