@@ -1,6 +1,18 @@
 #score-line-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     border: 1px dotted black;
+    border-radius: 25px;
 }
 
+#rank {
+    border: 2px solid black;
+    border-radius: 25px;
+    width: 40px;
+    text-align: center;
+
+}
+
+#score {
+    padding-right: 20px;
+}
