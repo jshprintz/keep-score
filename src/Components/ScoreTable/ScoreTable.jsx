@@ -4,13 +4,12 @@ import "./ScoreTable.css";
 
 export default function ScoreTable() {
   const [scoreListState, setScoreListState] = useState([]);
-
   getInitialScores();
 
   function getInitialScores() {
-   if (scoreListState.length < 20) {
-         setScoreListState(oldState => [...oldState, randomScore()]) 
-         console.log(scoreListState)
+    if (scoreListState.length < 20) {
+      setScoreListState((oldState) => [...oldState, randomScore()]);
+      console.log(scoreListState);
     }
   }
 
@@ -22,9 +21,7 @@ export default function ScoreTable() {
     <div id="score-table-container">
       <div id="score-table">
         {scoreListState.map((score) => {
-            return (
-                <ScoreLine score={score} key={score}/>
-            )
+          return <ScoreLine score={score} key={score} />;
         })}
       </div>
     </div>
