@@ -17,14 +17,16 @@ export default function ScoreTable() {
     } else {
         //Sort the list of users by score
         sortList();
-        simulateChanges();
+        //Simulate the changes every two seconds
+        setInterval(simulateChanges, 2000);
     }
   }
 
   function simulateChanges() {
+    console.log("simulate changes engaged")
     // Handicap
-    sorted.map((user) => {
-        user.score += randomNumber((sorted[0].score/10), (user.score/10))
+    sorted.map((user, index) => {
+        user.score += (randomNumber((index), 1) * 10)
         return user;
     })
     sortList();
