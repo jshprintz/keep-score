@@ -1,17 +1,27 @@
 import React, { useState } from "react";
+import { faker } from '@faker-js/faker';
 import ScoreLine from "../ScoreLine/ScoreLine";
 import "./ScoreTable.css";
 
 export default function ScoreTable() {
-  const [scoreListState, setScoreListState] = useState([]);
+  const [scoreListState, setScoreListState] = useState([newUser()]);
 
   getInitialScores();
 
   function getInitialScores() {
     if (scoreListState.length < 20) {
-      setScoreListState((oldState) => [...oldState, randomScore()]);
+      
+      setScoreListState((oldState) => [...oldState, newUser()]);
       console.log(scoreListState.length);
     }
+  }
+
+  function newUser(){
+    const newUser = {
+        name: faker.name.fullName(),
+        score: randomScore()
+    }
+    return newUser;
   }
 
   function randomScore() {
@@ -22,7 +32,7 @@ export default function ScoreTable() {
     <div id="score-table-container">
       <div id="score-table">
         {scoreListState.map((score, index) => {
-          return <ScoreLine score={score} key={score} rank={index+1} />;
+          return <ScoreLine score={score} key={index} rank={index+1} />;
         })}
       </div>
     </div>
