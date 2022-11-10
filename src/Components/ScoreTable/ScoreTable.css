@@ -1,7 +1,7 @@
 #score-table {
     height: 80vh;
     width: 80vw;
-    background-color: rgb(151, 151, 194);
+    border: 2px solid rgb(151, 151, 194);
 }
 
 #score-table-container {
