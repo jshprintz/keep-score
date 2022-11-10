@@ -3,17 +3,22 @@ import ScoreLine from "../ScoreLine/ScoreLine";
 import "./ScoreTable.css";
 
 export default function ScoreTable() {
-  const scoreList = [];
+  const scoreList = [randomScore()];
 
   useEffect(() => {
+    console.log("useeffect launched")
     getInitialScores();
   });
 
   function getInitialScores() {
+    console.log("initial score launched")
     while (scoreList.length < 20) {
-      scoreList.push(randomScore);
+      scoreList.push(randomScore());
+      console.log(scoreList)
     }
   }
+
+
 
   function randomScore() {
     return Math.floor(Math.random() * (20000 - 10000 + 1) + 10000);
@@ -24,7 +29,7 @@ export default function ScoreTable() {
       <div id="score-table">
         {scoreList.map((score) => {
             return (
-                <ScoreLine score={score} />
+                <ScoreLine score={score} key={score}/>
             )
         })}
       </div>
