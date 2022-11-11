@@ -6,6 +6,15 @@
     border-radius: 10px;
 }
 
+#left-group-table, #right-group-table {
+    display: inline-flex;
+    align-items: center;
+}
+#right-group-table {
+    display: inline-flex;
+    align-items: center;
+}
+
 #score-line-container:hover {
     background-color: beige;
 }
@@ -15,6 +24,7 @@
     border-radius: 10px;
     width: 40px;
     text-align: center;
+    margin-right: 5px;
 }
 
 /* #player-image {
@@ -24,6 +34,7 @@
 #player-rank-diff-icon {
     size: 28px;
     width: 2vw;
+    margin-right: 10px;
 }
 
 #player-rank-diff {
@@ -36,6 +47,8 @@ width: 20vw;
 
 #player-scoreDiff {
     width: 9vw;
+    color: green;
+    margin-right: 10px;
 }
 
 #player-score {
