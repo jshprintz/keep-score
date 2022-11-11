@@ -21,19 +21,19 @@ export default function ScoreTable() {
     } else {
         //Sort the list of users by score
         sortList();
-        //Simulate the changes every two seconds
-        //setInterval(simulateChanges, 5000);
+
     }
   }
 
   function simulateChanges() {
     sortList();
     setScoreListState(sorted);
-    console.log(scoreListState);
 
     // Handicap
     for (let i=0; i<sorted.length; i++) {
-        sorted[i].score += (randomNumber(i, 1));
+        const scoreChange = (randomNumber(i+10, 1));
+        sorted[i].score += scoreChange;
+        sorted[i].scoreDiff = scoreChange;
     }
   }
 
@@ -49,6 +49,7 @@ export default function ScoreTable() {
     const newUser = {
       name: faker.name.fullName(),
       score: randomNumber(100, 25),
+      scoreDiff: null
     };
     return newUser;
   }
