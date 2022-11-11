@@ -13,7 +13,7 @@ function App() {
   // Initialize program
   function init() {
     // Init get scores/users
-    if (scoreListState.length < 25) {
+    if (scoreListState.length < 20) {
       setScoreListState((oldState) => [...oldState, newUser()]);
     } else {
       sortList();
