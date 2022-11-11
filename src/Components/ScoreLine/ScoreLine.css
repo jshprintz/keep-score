@@ -23,7 +23,7 @@
 #player-rank {
     border: 2px solid black;
     border-radius: 5px;
-    width: 40px;
+    width: 50px;
     text-align: center;
     margin-right: 5px;
 }
@@ -43,11 +43,11 @@
 }
 
 #player-name{
-width: 20vw;
+width: 30vw;
 }
 
-#player-scoreDiff {
-    width: 9vw;
+#player-score-diff {
+    width: 12vw;
     color: green;
     margin-right: 10px;
 }
@@ -55,6 +55,28 @@ width: 20vw;
 #player-score {
     padding-right: 20px;
 }
+
+.first {
+    font-size: 16pt;
+    line-height: 6vh;
+    background-color: gold;
+}
+
+.second {
+    font-size: 16pt;
+    line-height: 4vh;
+    background-color: silver;
+}
+
+.third {
+    font-size: 14pt;
+    line-height: 2vh;
+    background-color: rgb(205, 127, 50);
+}
+.rest {
+    font-size: 10pt;
+}
+
 
 /* #arrow-down {
     animation: move-down 1.5s ease-out;

@@ -1,10 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion"
 import { ImArrowDown, ImArrowUp } from "react-icons/im";
+
 import "./ScoreLine.css";
 
 export default function ScoreLine({ score, rank }) {
   const rankChange = (rank - score.rankDiff - 1) * -1;
+  let dispRank = "";
+
+  rank === 1 ? dispRank = "first" : rank === 2 ? dispRank = "second" : rank === 3 ? dispRank = "third" : dispRank = "rest";
 
   return (
   <motion.div
@@ -12,10 +16,10 @@ export default function ScoreLine({ score, rank }) {
   whileInView={{ opacity: 1}}
   viewport={{ once:true }}
   >
-    <div id="score-line-container">
+    <div id="score-line-container" className={dispRank}>
       <div id="left-group-table">
         <div id="player-rank">
-          <p>{rank}</p>
+          <p className={dispRank}>{rank}</p>
         </div>
         {score.scoreDiff ? (
           <div id="player-rank-diff-icon">
@@ -38,7 +42,7 @@ export default function ScoreLine({ score, rank }) {
       </div>
       <div id="right-group-table">
         {score.scoreDiff ? (
-          <div id="player-scoreDiff">
+          <div id="player-score-diff">
             <p>+ {score.scoreDiff}</p>
           </div>
         ) : null}
