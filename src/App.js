@@ -13,7 +13,7 @@ function App() {
   // Initialize program
   function init() {
     // Init get scores/users
-    if (scoreListState.length < 20) {
+    if (scoreListState.length < 25) {
       setScoreListState((oldState) => [...oldState, newUser()]);
     } else {
       sortList();
@@ -40,7 +40,7 @@ function App() {
     return newUser;
   }
 
-  // Init random score
+  // random number generator
   function randomNumber(max, min) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
