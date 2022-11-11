@@ -21,21 +21,14 @@ export default function ButtonRow(){
 
 
     function changeCountHandler(index){
-        console.log(index)
         index > 3 ? index = 0 : index++;
-        console.log(index)
         setButtonState(numOfScores[index])
         console.log(index, "clicked")
     }
 
-    function pauseHandler(){
-        
-    }
-
     return(
-        <>
+        <div id="button-row">
         <Button onClick={() => changeCountHandler(index)}>Top {buttonState}</Button>
-        <Button onClick={() => pauseHandler()}>Pause</Button>
-        </>
+        </div>
     )
 }
