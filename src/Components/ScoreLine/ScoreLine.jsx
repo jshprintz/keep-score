@@ -7,6 +7,9 @@ export default function ScoreLine({ score, rank }) {
         <div id="player-rank"><p>{rank}</p></div>
         {/* <div ><img src={score.avatar} alt="profile" id="player-image"/></div> */}
         <div id="player-name"><p>{score.name}</p></div>
+        { score.scoreDiff ? (
+        <div id="player-scoreDiff"><p>+ {score.scoreDiff}</p></div>
+        ) : null }
         <div id="player-score"><p>{score.score}</p></div>
     </div>
   );

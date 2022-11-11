@@ -16,6 +16,14 @@
     height: 50px;
 } */
 
+#player-name{
+width: 20vw;
+}
+
+#player-scoreDiff {
+    width: 5vw;
+}
+
 #player-score {
     padding-right: 20px;
 }
