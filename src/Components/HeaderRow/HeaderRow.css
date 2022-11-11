@@ -12,6 +12,7 @@
 
 #rank-header {
     width: 10vw;
+    min-width: 60px;
 }
 
 #player-header {
@@ -20,4 +21,5 @@
 
 #score-header {
     width: 12vw;
+    min-width: 60px;
 }
