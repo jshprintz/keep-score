@@ -9,14 +9,22 @@
   animation: rotate 2s ease infinite;
 }
 
+.star2 {
+  animation-delay: .5s;
+}
+
+.star3 {
+  animation-delay: 1s;
+}
+
+.star4 {
+  animation-delay: 1.5s;
+}
+
 
 @keyframes rotate {
   0%{
     transform: rotate(0deg);
-  }
-
-  50%{
-    transform: rotate(180deg);
   }
 
   100%{
