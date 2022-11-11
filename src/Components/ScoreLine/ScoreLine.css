@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     border: 1px dotted black;
-    border-radius: 25px;
+    border-radius: 10px;
 }
 
 #score-line-container:hover {
