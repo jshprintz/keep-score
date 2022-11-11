@@ -1,22 +1,20 @@
 #score-table {
-    width: 80vw;
-    margin-bottom: 10vh;
+  width: 80vw;
+  margin-bottom: 10vh;
 }
 
 #score-table-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10vh;
-    
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10vh;
 }
 
-
 @media only screen and (max-width: 600px) {
-    #score-table{
-        width: 100vw;
-    }
-
-    #player-rank-diff-icon {
-        margin-right: 20px;
-    }
+  #score-table {
+    width: 100vw;
   }
+
+  #player-rank-diff-icon {
+    margin-right: 20px;
+  }
+}
