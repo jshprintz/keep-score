@@ -11,3 +11,14 @@
     justify-content: center;
     
 }
+
+#headers {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 550px) {
+    #headers {
+        opacity: 0;
+    }
+  }
