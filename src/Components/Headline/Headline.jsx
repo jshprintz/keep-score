@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { BsFillStarFill } from "react-icons/bs";
 import "./Headline.css";
 
 const Header = styled.div`
@@ -18,7 +19,9 @@ font-size: 20pt;
 export default function Headline() {
   return (
     <div id="header">
+      <BsFillStarFill color="gold" size={60} className="star"/>
       <Header>Top 20 Scores!</Header>
+      <BsFillStarFill color="gold" size={60} className="star"/>
     </div>
   )
 }

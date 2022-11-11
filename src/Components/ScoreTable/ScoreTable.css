@@ -15,4 +15,8 @@
     #score-table{
         width: 100vw;
     }
+
+    #player-rank-diff-icon {
+        margin-right: 20px;
+    }
   }
