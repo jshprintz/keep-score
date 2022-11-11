@@ -1,25 +1,25 @@
 #header-row {
-    text-align: center;
-    display: inline-flex;
-    justify-content: space-evenly;
-    width: 100vw;
+  text-align: center;
+  display: inline-flex;
+  justify-content: space-evenly;
+  width: 100vw;
 }
 
 #header-row-container {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 #rank-header {
-    width: 10vw;
-    min-width: 60px;
+  width: 10vw;
+  min-width: 60px;
 }
 
 #player-header {
-    width: 20vw;
+  width: 20vw;
 }
 
 #score-header {
-    width: 12vw;
-    min-width: 60px;
+  width: 12vw;
+  min-width: 60px;
 }

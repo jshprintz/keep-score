@@ -7,7 +7,7 @@ const SubHeader = styled.div`
   border-radius: 5px;
   border: 2px solid palevioletred;
   color: palevioletred;
-  margin: .5em 1em;
+  margin: 0.5em 1em;
   padding: 0.25em 0.5em;
   border-radius: 5px;
   font-size: 20pt;

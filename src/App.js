@@ -3,28 +3,28 @@ import Headline from "./Components/Headline/Headline";
 import ScoreTable from "./Components/ScoreTable/ScoreTable";
 import HeaderRow from "./Components/HeaderRow/HeaderRow";
 import { faker } from "@faker-js/faker";
-import './App.css';
+import "./App.css";
 
 function App() {
   const [scoreListState, setScoreListState] = useState([]);
 
   init();
 
-    // Initialize program
-    function init() {
-      // Init get scores/users
-      if (scoreListState.length < 20) {
-        setScoreListState((oldState) => [...oldState, newUser()]);
-      } else {
-       sortList()
-      }
+  // Initialize program
+  function init() {
+    // Init get scores/users
+    if (scoreListState.length < 20) {
+      setScoreListState((oldState) => [...oldState, newUser()]);
+    } else {
+      sortList();
     }
+  }
 
-     // Sort the list
+  // Sort the list
   function sortList() {
     const sorted = [...scoreListState].sort((a, b) => {
-        return b.score - a.score;
-        });
+      return b.score - a.score;
+    });
 
     return sorted;
   }
@@ -35,7 +35,7 @@ function App() {
       name: faker.name.fullName(),
       score: randomNumber(100, 25),
       scoreDiff: null,
-      rankDiff: null
+      rankDiff: null,
     };
     return newUser;
   }
@@ -49,7 +49,11 @@ function App() {
     <>
       <Headline />
       <HeaderRow />
-      <ScoreTable sortList={sortList} randNum={randomNumber} setScoreListState={setScoreListState} />
+      <ScoreTable
+        sortList={sortList}
+        randNum={randomNumber}
+        setScoreListState={setScoreListState}
+      />
     </>
   );
 }
