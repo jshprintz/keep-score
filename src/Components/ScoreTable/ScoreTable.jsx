@@ -6,7 +6,7 @@ export default function ScoreTable({sortList, setScoreListState, randNum}) {
   const sorted = sortList()
 
   useEffect(() => {
-    const interval = setInterval(simulateChanges, 10000);
+    const interval = setInterval(simulateChanges, 2000);
     console.log(sorted)
 
     return () => clearInterval(interval);
@@ -25,6 +25,15 @@ export default function ScoreTable({sortList, setScoreListState, randNum}) {
   }
 
   return (
+    <>
+    <div id="headers">
+        <h3>Rank</h3>
+        <h3>Rank Change</h3>
+        <h3>Player Name</h3>
+        <h3>Score Change</h3>
+        <h3>Total Score</h3>
+    </div>
+    
     <div id="score-table-container">
       <div id="score-table">
         {sorted.map((score, index) => {
@@ -32,5 +41,6 @@ export default function ScoreTable({sortList, setScoreListState, randNum}) {
         })}
       </div>
     </div>
+    </>
   );
 }
