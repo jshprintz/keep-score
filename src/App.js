@@ -33,7 +33,8 @@ function App() {
     const newUser = {
       name: faker.name.fullName(),
       score: randomNumber(100, 25),
-      scoreDiff: null
+      scoreDiff: null,
+      rankDiff: null
     };
     return newUser;
   }
