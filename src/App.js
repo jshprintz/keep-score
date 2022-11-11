@@ -16,7 +16,6 @@ function App() {
     if (scoreListState.length < 20) {
       setScoreListState((oldState) => [...oldState, newUser()]);
     } else {
-      //Initial list is grabbed so sort it
       sortList();
     }
   }
