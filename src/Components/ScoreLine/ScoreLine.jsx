@@ -11,7 +11,7 @@ export default function ScoreLine({ score, rank }) {
     <div id="score-line-container">
         <div id="player-rank"><p>{rank}</p></div>
         { score.scoreDiff ? (
-        <div id="player-rank-diff-icon">{ rankChange < 0 ? <ImArrowDown color="red" /> : rankChange > 0 ? <ImArrowUp color="green" /> : null} </div>
+        <div id="player-rank-diff-icon">{ rankChange < 0 ? <ImArrowDown color="red" id="arrow-down"/> : rankChange > 0 ? <ImArrowUp color="green" id="arrow-up"/> : null} </div>
         ) : null }
         { score.scoreDiff ? (
         <div id="player-rank-diff"><p>{rankChange}</p></div>
