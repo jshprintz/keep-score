@@ -12,6 +12,7 @@
 * Framer-Motion
 * GH-Pages
 * React Icons
+* Faker
 
 
 
