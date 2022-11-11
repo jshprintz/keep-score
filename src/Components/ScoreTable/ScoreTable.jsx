@@ -4,14 +4,14 @@ import ScoreLine from "../ScoreLine/ScoreLine";
 import "./ScoreTable.css";
 
 export default function ScoreTable() {
-  let sorted = [];
   const [scoreListState, setScoreListState] = useState([]);
+  let sorted = scoreListState;
 
   init();
 
   useEffect(() => {
-    setInterval(simulateChanges, 2000);
-  }, []);
+    setInterval(simulateChanges, 5000);
+  });
 
   // Initialize program
   function init() {
@@ -19,9 +19,7 @@ export default function ScoreTable() {
     if (scoreListState.length < 20) {
       setScoreListState((oldState) => [...oldState, newUser()]);
     } else {
-        //Sort the list of users by score
-        sortList();
-
+     sortList()
     }
   }
 
