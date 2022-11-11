@@ -4,6 +4,7 @@
     align-items: center;
     border: 1px dotted black;
     border-radius: 10px;
+    background-color: aliceblue;
 }
 
 #left-group-table, #right-group-table {
