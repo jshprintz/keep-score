@@ -1,6 +1,7 @@
 #score-line-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border: 1px dotted black;
     border-radius: 25px;
 }
@@ -16,12 +17,17 @@
     height: 50px;
 } */
 
+#player-rank-diff-icon {
+    size: 28px;
+    width: 2vw;
+}
+
 #player-name{
 width: 20vw;
 }
 
 #player-scoreDiff {
-    width: 5vw;
+    width: 7vw;
 }
 
 #player-score {
