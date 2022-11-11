@@ -20,7 +20,6 @@ function App() {
       sortList();
     }
   }
-
   // Sort the list
   function sortList() {
     const sorted = [...scoreListState].sort((a, b) => {
