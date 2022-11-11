@@ -7,12 +7,12 @@
 }
 
 #score-line-container:hover {
-    zoom: 1.1;
+    background-color: beige;
 }
 
 #player-rank {
     border: 2px solid black;
-    border-radius: 25px;
+    border-radius: 10px;
     width: 40px;
     text-align: center;
 }
@@ -41,3 +41,43 @@ width: 20vw;
 #player-score {
     padding-right: 20px;
 }
+
+/* #arrow-down {
+    animation: move-down 1.5s ease-out;
+}
+
+#arrow-up {
+    animation: move-up 1.5s ease-out;
+}
+
+@keyframes move-down {
+    0% {
+      transform: translatey(-20px);
+      opacity: 0;
+    }
+
+    80% {
+        transform: translatey(20px);
+    }
+
+    100% {
+      transform: translatey(0px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes move-up {
+    0% {
+        transform: translatey(20px);
+        opacity: 0;
+      }
+  
+      80% {
+          transform: translatey(-20px);
+      }
+  
+      100% {
+        transform: translatey(0px);
+        opacity: 1;
+      }
+  } */
