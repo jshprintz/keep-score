@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Headline from "./Components/Headline/Headline";
 import ScoreTable from "./Components/ScoreTable/ScoreTable";
-import ButtonRow from "./Components/ButtonRow/ButtonRow";
+import HeaderRow from "./Components/HeaderRow/HeaderRow";
 import { faker } from "@faker-js/faker";
 import './App.css';
 
@@ -48,7 +48,7 @@ function App() {
   return (
     <>
       <Headline />
-      <ButtonRow />
+      <HeaderRow />
       <ScoreTable sortList={sortList} randNum={randomNumber} setScoreListState={setScoreListState} />
     </>
   );
