@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { faker } from "@faker-js/faker";
 import ScoreLine from "../ScoreLine/ScoreLine";
 import "./ScoreTable.css";
 
 export default function ScoreTable() {
   let sorted = [];
-  const [scoreListState, setScoreListState] = useState([newUser()]);
+  const [scoreListState, setScoreListState] = useState([]);
 
   init();
+
+  useEffect(() => {
+    setInterval(simulateChanges, 2000);
+  }, []);
 
   // Initialize program
   function init() {
@@ -18,19 +22,19 @@ export default function ScoreTable() {
         //Sort the list of users by score
         sortList();
         //Simulate the changes every two seconds
-        setInterval(simulateChanges, 2000);
+        //setInterval(simulateChanges, 5000);
     }
   }
 
   function simulateChanges() {
-    console.log("simulate changes engaged")
-    // Handicap
-    sorted.map((user, index) => {
-        user.score += (randomNumber((index), 1))
-        return user;
-    })
     sortList();
     setScoreListState(sorted);
+    console.log(scoreListState);
+
+    // Handicap
+    for (let i=0; i<sorted.length; i++) {
+        sorted[i].score += (randomNumber(i, 1));
+    }
   }
 
   // Sort the list
@@ -44,7 +48,7 @@ export default function ScoreTable() {
   function newUser() {
     const newUser = {
       name: faker.name.fullName(),
-      score: randomNumber(1000, 100),
+      score: randomNumber(100, 25),
     };
     return newUser;
   }
@@ -53,6 +57,8 @@ export default function ScoreTable() {
   function randomNumber(max, min) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
+
+  
 
   return (
     <div id="score-table-container">
