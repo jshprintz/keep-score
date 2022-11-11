@@ -26,35 +26,35 @@
   border-radius: 5px;
   width: 50px;
   text-align: center;
-  margin-right: 5px;
 }
-
-/* #player-image {
-    height: 50px;
-} */
 
 #player-rank-diff-icon {
   size: 28px;
   width: 2vw;
-  margin-right: 10px;
+  text-align: center;
+  padding: 5px;
 }
 
 #player-rank-diff {
   width: 3vw;
+  text-align: center;
 }
 
 #player-name {
   width: 30vw;
+  text-align: left;
 }
 
 #player-score-diff {
   width: 12vw;
   color: green;
-  margin-right: 10px;
+  text-align: center;
 }
 
 #player-score {
   padding-right: 20px;
+  text-align: center;
+  padding: 0 5px;
 }
 
 .first {

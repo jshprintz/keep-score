@@ -1,6 +1,8 @@
 #score-table {
   width: 80vw;
   margin-bottom: 10vh;
+  height: 70vh;
+  overflow: scroll;
 }
 
 #score-table-container {

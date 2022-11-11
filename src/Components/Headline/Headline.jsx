@@ -20,7 +20,7 @@ export default function Headline() {
     <div id="header">
       <BsFillStarFill color="gold" size={60} className="star star1" />
       <BsFillStarFill color="gold" size={60} className="star star2" />
-      <Header>Top 20 Scores!</Header>
+      <Header>Top 25 Leaderboard!</Header>
       <BsFillStarFill color="gold" size={60} className="star star3" />
       <BsFillStarFill color="gold" size={60} className="star star4" />
     </div>

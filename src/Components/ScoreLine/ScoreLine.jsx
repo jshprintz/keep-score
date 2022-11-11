@@ -7,7 +7,7 @@ import "./ScoreLine.css";
 export default function ScoreLine({ score, rank }) {
   const rankChange = (rank - score.rankDiff - 1) * -1;
   let dispRank = "";
-
+  //sets classname variable
   rank === 1
     ? (dispRank = "first")
     : rank === 2
@@ -42,7 +42,6 @@ export default function ScoreLine({ score, rank }) {
             </div>
           ) : null}
         </div>
-        {/* <div ><img src={score.avatar} alt="profile" id="player-image"/></div> */}
         <div id="player-name">
           <p>{score.name}</p>
         </div>
