@@ -6,6 +6,7 @@ import { faker } from "@faker-js/faker";
 import "./App.css";
 
 function App() {
+  let id = 0;
   const [userNumber, setUserNumber] = useState(25);
   const initScoreList = [newUser()];
     // Inital index of all users with scores
@@ -33,6 +34,7 @@ function App() {
   function newUser() {
     const newUser = {
       name: `${faker.name.firstName()} ${faker.name.lastName()}`,
+      id: id++,
       score: randomNumber(100, 25),
       scoreDiff: null,
       rank: null,
@@ -61,6 +63,7 @@ function App() {
     setScoreListState(sorted);
   }
 
+  console.log(scoreListState, "<---")
   return (
     <>
       <Headline userNumber={userNumber} setUserNumber={setUserNumber} />
