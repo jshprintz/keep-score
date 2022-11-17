@@ -8,11 +8,10 @@ import "./App.css";
 function App() {
   const [userNumber, setUserNumber] = useState(25);
   const initScoreList = [newUser()];
-  // Inital index of all users with scores
-  for (let i = 0; initScoreList.length < 100; i++) {
-    initScoreList.push(newUser());
-  }
-
+    // Inital index of all users with scores
+    for (let i = 0; initScoreList.length < 100; i++) {
+      initScoreList.push(newUser());
+    }
   const [scoreListState, setScoreListState] = useState(initScoreList);
   const sorted = sortList();
   const sortedLimited = [];
@@ -33,9 +32,10 @@ function App() {
   // Alter to include the old rank and the new rank to make less of a list object
   function newUser() {
     const newUser = {
-      name: faker.name.fullName(),
+      name: `${faker.name.firstName()} ${faker.name.lastName()}`,
       score: randomNumber(100, 25),
       scoreDiff: null,
+      rank: null,
       rankDiff: null,
     };
     return newUser;
@@ -45,7 +45,6 @@ function App() {
   function randomNumber(max, min) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
-
 
   // Simulates scoring changes
   function simulateChanges() {
