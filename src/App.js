@@ -50,6 +50,7 @@ function App() {
 
   // Simulates scoring changes
   function simulateChanges() {
+    setScoreListState(sorted);
     // Handicap
     for (let i = 0; i < sorted.length; i++) {
       // handicap is based off of rank. The higher the rank, the smaller the range in
@@ -60,7 +61,7 @@ function App() {
       //storing the new rank after the list has been sorted
       sorted[i].rankNew = i;
     }
-    setScoreListState(sorted);
+
   }
 
   return (
