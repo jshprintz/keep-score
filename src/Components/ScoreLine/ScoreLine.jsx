@@ -4,8 +4,8 @@ import { ImArrowDown, ImArrowUp } from "react-icons/im";
 
 import "./ScoreLine.css";
 
-export default function ScoreLine({ score, rank }) {
-  const rankChange = (rank - score.rankDiff - 1) * -1;
+export default function ScoreLine({ user, rank }) {
+  const rankChange = (rank - user.rankDiff - 1) * -1;
   let dispRank = "";
   //sets classname variable
   rank === 1
@@ -27,7 +27,7 @@ export default function ScoreLine({ score, rank }) {
           <div id="player-rank">
             <p className={dispRank}>{rank}</p>
           </div>
-          {score.scoreDiff ? (
+          {user.scoreDiff ? (
             <div id="player-rank-diff-icon">
               {rankChange < 0 ? (
                 <ImArrowDown color="red" id="arrow-down" />
@@ -36,23 +36,23 @@ export default function ScoreLine({ score, rank }) {
               ) : null}{" "}
             </div>
           ) : null}
-          {score.scoreDiff ? (
+          {user.scoreDiff ? (
             <div id="player-rank-diff">
               <p>{rankChange}</p>
             </div>
           ) : null}
         </div>
         <div id="player-name">
-          <p>{score.name}</p>
+          <p>{user.name}</p>
         </div>
         <div id="right-group-table">
-          {score.scoreDiff ? (
+          {user.scoreDiff ? (
             <div id="player-score-diff">
-              <p>+ {score.scoreDiff}</p>
+              <p>+ {user.scoreDiff}</p>
             </div>
           ) : null}
           <div id="player-score">
-            <p>{score.score}</p>
+            <p>{user.score}</p>
           </div>
         </div>
       </div>

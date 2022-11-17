@@ -6,15 +6,15 @@ import { faker } from "@faker-js/faker";
 import "./App.css";
 
 function App() {
+  const [userNumber, setUserNumber] = useState(25);
   const initScoreList = [newUser()];
-
-  for (let i=0; initScoreList.length < 100; i++){
+  // Inital index of all users with scores
+  for (let i = 0; initScoreList.length < 100; i++) {
     initScoreList.push(newUser());
   }
   const [scoreListState, setScoreListState] = useState(initScoreList);
-
   sortList();
-  
+
   // Sort the list
   function sortList() {
     const sorted = [...scoreListState].sort((a, b) => {
@@ -43,12 +43,13 @@ function App() {
 
   return (
     <>
-      <Headline />
+      <Headline userNumber={userNumber} setUserNumber={setUserNumber} />
       <HeaderRow />
       <ScoreTable
         sortList={sortList}
         randNum={randomNumber}
         setScoreListState={setScoreListState}
+        userNumber={userNumber}
       />
     </>
   );

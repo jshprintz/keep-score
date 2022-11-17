@@ -2,8 +2,13 @@ import React, { useEffect } from "react";
 import ScoreLine from "../ScoreLine/ScoreLine";
 import "./ScoreTable.css";
 
-export default function ScoreTable({ sortList, setScoreListState, randNum }) {
+export default function ScoreTable({ sortList, setScoreListState, randNum, userNumber }) {
   const sorted = sortList();
+  const sortedLimited = [];
+
+  for (let i=0; i< userNumber; i++){
+    sortedLimited.push(sorted[i]);
+  }
 
   useEffect(() => {
     const interval = setInterval(simulateChanges, 2000);
@@ -26,8 +31,8 @@ export default function ScoreTable({ sortList, setScoreListState, randNum }) {
     <>
       <div id="score-table-container">
         <div id="score-table">
-          {sorted.map((score, index) => {
-            return <ScoreLine score={score} key={index} rank={index + 1} />;
+          {sortedLimited.map((user, index) => {
+            return <ScoreLine user={user} key={index} rank={index + 1} />;
           })}
         </div>
       </div>
