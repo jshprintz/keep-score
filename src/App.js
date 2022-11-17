@@ -6,20 +6,15 @@ import { faker } from "@faker-js/faker";
 import "./App.css";
 
 function App() {
-  const [scoreListState, setScoreListState] = useState([]);
+  const initScoreList = [newUser()];
 
-  init();
-
-  // Initialize program
-  function init() {
-    // Init get scores/users
-    if (scoreListState.length < 20) {
-      setScoreListState((oldState) => [...oldState, newUser()]);
-    } else {
-      sortList();
-    }
+  for (let i=0; initScoreList.length < 100; i++){
+    initScoreList.push(newUser());
   }
+  const [scoreListState, setScoreListState] = useState(initScoreList);
 
+  sortList();
+  
   // Sort the list
   function sortList() {
     const sorted = [...scoreListState].sort((a, b) => {
@@ -30,6 +25,7 @@ function App() {
   }
 
   // Init new user
+  // Alter to include the old rank and the new rank to make less of a list object
   function newUser() {
     const newUser = {
       name: faker.name.fullName(),
