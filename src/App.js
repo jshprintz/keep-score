@@ -55,9 +55,9 @@ function App() {
       const scoreChange = randomNumber(i + 10, 1);
       sorted[i].score += scoreChange;
       sorted[i].scoreDiff = scoreChange;
+      //storing the new rank after the list has been sorted
       sorted[i].rankDiff = i;
     }
-
     setScoreListState(sorted);
   }
 

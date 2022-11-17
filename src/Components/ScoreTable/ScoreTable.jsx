@@ -5,7 +5,7 @@ import "./ScoreTable.css";
 export default function ScoreTable({ sortedLimited, simulateChanges }) {
 
   useEffect(() => {
-    const interval = setInterval(simulateChanges, 2000);
+    const interval = setInterval(simulateChanges, 10000);
     return () => clearInterval(interval);
   });
 
