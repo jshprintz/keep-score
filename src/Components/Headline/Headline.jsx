@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { BsFillStarFill } from "react-icons/bs";
 import "./Headline.css";
