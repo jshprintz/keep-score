@@ -12,15 +12,20 @@ function App() {
   for (let i = 0; initScoreList.length < 100; i++) {
     initScoreList.push(newUser());
   }
+
   const [scoreListState, setScoreListState] = useState(initScoreList);
-  sortList();
+  const sorted = sortList();
+  const sortedLimited = [];
+
+  for (let i = 0; i < userNumber; i++) {
+    sortedLimited.push(sorted[i]);
+  }
 
   // Sort the list
   function sortList() {
     const sorted = [...scoreListState].sort((a, b) => {
       return b.score - a.score;
     });
-
     return sorted;
   }
 
@@ -41,15 +46,25 @@ function App() {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
+  // Simulates scoring changes
+  function simulateChanges() {
+    setScoreListState(sorted);
+    // Handicap
+    for (let i = 0; i < sorted.length; i++) {
+      const scoreChange = randomNumber(i + 10, 1);
+      sorted[i].score += scoreChange;
+      sorted[i].scoreDiff = scoreChange;
+      sorted[i].rankDiff = i;
+    }
+  }
+
   return (
     <>
       <Headline userNumber={userNumber} setUserNumber={setUserNumber} />
       <HeaderRow />
       <ScoreTable
-        sortList={sortList}
-        randNum={randomNumber}
-        setScoreListState={setScoreListState}
-        userNumber={userNumber}
+        sortedLimited={sortedLimited}
+        simulateChanges={simulateChanges}
       />
     </>
   );
