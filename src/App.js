@@ -38,7 +38,7 @@ function App() {
       score: randomNumber(100, 25),
       scoreDiff: null,
       rank: null,
-      rankDiff: null,
+      rankNew: null,
     };
     return newUser;
   }
@@ -58,12 +58,11 @@ function App() {
       sorted[i].score += scoreChange;
       sorted[i].scoreDiff = scoreChange;
       //storing the new rank after the list has been sorted
-      sorted[i].rankDiff = i;
+      sorted[i].rankNew = i;
     }
     setScoreListState(sorted);
   }
 
-  console.log(scoreListState, "<---")
   return (
     <>
       <Headline userNumber={userNumber} setUserNumber={setUserNumber} />

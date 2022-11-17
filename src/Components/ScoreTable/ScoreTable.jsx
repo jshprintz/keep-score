@@ -14,7 +14,7 @@ export default function ScoreTable({ sortedLimited, simulateChanges }) {
       <div id="score-table-container">
         <div id="score-table">
           {sortedLimited.map((user, index) => {
-            return <ScoreLine user={user} key={index} rank={index + 1} />;
+            return <ScoreLine user={user} key={user.id} rank={index + 1} />;
           })}
         </div>
       </div>

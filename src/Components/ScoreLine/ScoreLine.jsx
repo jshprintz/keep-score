@@ -5,10 +5,9 @@ import { ImArrowDown, ImArrowUp } from "react-icons/im";
 import "./ScoreLine.css";
 
 export default function ScoreLine({ user, rank }) {
+
+  const rankChange = (rank - user.rankNew - 1) * -1;
   
-  const rankChange = (rank - user.rankDiff - 1) * -1;
-
-
   let dispRank = "";
   //sets classname variable
   rank === 1
