@@ -46,16 +46,20 @@ function App() {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
+
   // Simulates scoring changes
   function simulateChanges() {
-    setScoreListState(sorted);
     // Handicap
     for (let i = 0; i < sorted.length; i++) {
+      // handicap is based off of rank. The higher the rank, the smaller the range in
+      // the amount of points you can score. The lower the rank, the larger the range
       const scoreChange = randomNumber(i + 10, 1);
       sorted[i].score += scoreChange;
       sorted[i].scoreDiff = scoreChange;
       sorted[i].rankDiff = i;
     }
+
+    setScoreListState(sorted);
   }
 
   return (

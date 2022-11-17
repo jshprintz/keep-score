@@ -9,7 +9,6 @@ export default function ScoreTable({ sortedLimited, simulateChanges }) {
     return () => clearInterval(interval);
   });
 
-
   return (
     <>
       <div id="score-table-container">
