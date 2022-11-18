@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+//import { motion } from "framer-motion";
 import { ImArrowDown, ImArrowUp } from "react-icons/im";
 
 import "./ScoreLine.css";
@@ -19,11 +19,15 @@ export default function ScoreLine({ user, rank }) {
     : (dispRank = "rest");
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-    >
+    // Not sure why but this framer motion was causing the whole table to re render after
+    // every iteration
+
+
+    // <motion.div
+    //   initial={{ opacity: 0 }}
+    //   whileInView={{ opacity: 1 }}
+    //   viewport={{ once: true }}
+    // >
       <div id="score-line-container" className={dispRank}>
         <div id="left-group-table">
           <div id="player-rank">
@@ -58,6 +62,6 @@ export default function ScoreLine({ user, rank }) {
           </div>
         </div>
       </div>
-    </motion.div>
+    // </motion.div>
   );
 }
