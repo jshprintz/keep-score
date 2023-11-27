@@ -9,7 +9,7 @@ function App() {
   let id = 0;
   const [userNumber, setUserNumber] = useState(25);
   const initScoreList = [newUser()];
-    // Inital index of all users with scores
+    // Initial index of all users with scores
     for (let i = 0; initScoreList.length < 100; i++) {
       initScoreList.push(newUser());
     }
